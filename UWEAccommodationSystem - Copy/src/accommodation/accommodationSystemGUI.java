@@ -9,10 +9,14 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.scene.control.TableView;
 // import javafx.application.Application.launch;
 
 public class accommodationSystemGUI extends Application {
+
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -23,6 +27,15 @@ public class accommodationSystemGUI extends Application {
 
         primaryStage.setScene(accommodationSystemScene);
         primaryStage.show();
+
+        //Table
+
+
+
+        primaryStage.show();
+    }
+
+
         /*
         FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLButtonGUI.fxml"));
         
@@ -36,7 +49,7 @@ public class accommodationSystemGUI extends Application {
         primaryStage.show(); 
         */
         
-    }
+
 
     public static void main(String[] args) {
         Application.launch(accommodationSystemGUI.class, args);

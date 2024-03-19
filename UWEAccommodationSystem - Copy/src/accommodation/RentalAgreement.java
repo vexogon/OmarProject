@@ -40,5 +40,11 @@ public class RentalAgreement {
     }
 }
 
-   
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
 }

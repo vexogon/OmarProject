@@ -45,26 +45,61 @@ public class Hall {
         return accommodations.size();
     }
 
+    public boolean cleanStatusExistsCheck(Accommodation accommodation) {
+        if(accommodation.getCleaningStatus() == null) {
+            return false;
+        }
+        return true;
+
+    }
+
     public int getTotalAvailable() {
         int total = 0;
-        for (Accommodation accommodation : accommodations) {
-            if (!accommodation.getStatus().isOccupied()) {
-                total++;
-            }
+        for (int i = 0; i < accommodations.size(); i++) {
+                if (!accommodations.get(i).getStatus().isOccupied()) {
+                    total++;
+                }
+                System.out.println(total);
         }
+
         return total;
     }
 
     public int getTotalOffline() {
         int total = 0;
         for (Accommodation accommodation : accommodations) {
-            if (accommodation.getCleaningStatus().isOffline()) { 
-                total++;
+            if(cleanStatusExistsCheck(accommodation)) {
+                if (accommodation.getCleaningStatus().isOffline()) {
+                    total++;
+                }
+            }
+
+        }
+        return total;
+    }
+
+    public int getAllCleaning() {
+        int total = 0;
+        for(int i = 0; i < accommodations.size(); i++) {
+            if(accommodations.get(i).requireCleaning()) {
+                total +=1;
             }
         }
         return total;
     }
-    
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setTelNo(String telNo) {
+        this.telNo = telNo;
+    }
+
+    public void setAccommodations(List<Accommodation> accommodations) {
+        this.accommodations = accommodations;
+    }
+
     public String toString()
     {
         return this.name;

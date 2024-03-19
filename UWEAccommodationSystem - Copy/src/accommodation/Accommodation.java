@@ -5,6 +5,8 @@
 
 package accommodation;
 
+import javafx.scene.control.TableView;
+
 public class Accommodation {
 
     private int roomNumber;
@@ -17,7 +19,7 @@ public class Accommodation {
     public Accommodation(int roomNumber, AccommodationType type) {
         this.roomNumber = roomNumber;
         this.type = type;
-        this.status = new AccommodationStatus(true, false);
+        this.status = new AccommodationStatus(false, true);
     }
 
     public void requestMaintenance() {
@@ -40,8 +42,24 @@ public class Accommodation {
         return rentalAgreement;
     }
 
+
+
     public CleaningStatus getCleaningStatus() {
+
         return cleaningStatus;
+    }
+
+    public boolean requireCleaning() {
+        if(cleaningStatus == null) {
+            return false;
+        }
+        return cleaningStatus.isDirty();
+    }
+
+    public void tableExport(TableView view) {
+
+
+
     }
 
     public AccommodationType getType() {
@@ -56,5 +74,28 @@ public class Accommodation {
         return roomNumber;
     }
 
-    
+
+    public void setRoomNumber(int roomNumber) {
+        this.roomNumber = roomNumber;
+    }
+
+    public void setType(AccommodationType type) {
+        this.type = type;
+    }
+
+    public void setStatus(AccommodationStatus status) {
+        this.status = status;
+    }
+
+    public void setRentalAgreement(RentalAgreement rentalAgreement) {
+        this.rentalAgreement = rentalAgreement;
+    }
+
+    public void setMaintenanceRequested(boolean maintenanceRequested) {
+        this.maintenanceRequested = maintenanceRequested;
+    }
+
+    public void setCleaningStatus(CleaningStatus cleaningStatus) {
+        this.cleaningStatus = cleaningStatus;
+    }
 }

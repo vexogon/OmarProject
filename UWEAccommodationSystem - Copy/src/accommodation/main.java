@@ -12,17 +12,17 @@ public class main {
       System.out.println("END");
       
       
-/*
-    Student student = new Student(1, "Omar Sherif", "0777-807-1503");
+
+    Student student = new Student("1", "Omar ","David","0777-807-1503","2");
 
 HallManager manager = new HallManager("Jane Smith");
 AccommodationType EnsuiteType = new AccommodationType("Ensuite", "One bed", 500f);
 Accommodation accommodation = new Accommodation(906, EnsuiteType);
 AccommodationStatus accommodationStatus = new AccommodationStatus(true, false);
 CleaningStatus cleaningStatus = new CleaningStatus(true, false, false);
-RentalAgreement agreement = new RentalAgreement(1234, student);
+RentalAgreement agreement = new RentalAgreement(student);
 accommodation.createRentalAgreement(agreement);
-Hall hall = new Hall("Purdown View Hall");
+Hall hall = new Hall("Purdown View Hall", "+44");
 hall.addAccommodation(accommodation);
 
 uweAccommodationTeam team = new uweAccommodationTeam();
@@ -30,7 +30,6 @@ uweAccommodationTeam team = new uweAccommodationTeam();
 team.addHall(hall);
 
     // Print details
-System.out.println("Student: " + student.getName());
 System.out.println("Student mobile number: " + student.getMobileNumber());
 System.out.println("Hall: " + hall.getName());
 System.out.println("Accommodation: " + accommodation.getRoomNumber());
@@ -38,7 +37,7 @@ System.out.println("Accommodation type: " + accommodation.getType().getName());
 System.out.println("Accommodation status: " + accommodationStatus.getStatus());
 System.out.println("Cleaning status: " + cleaningStatus.getCleaningStatus());
 System.out.println("Agreement: " + agreement.getLeaseNumber());
-*/
+
 
   }
 

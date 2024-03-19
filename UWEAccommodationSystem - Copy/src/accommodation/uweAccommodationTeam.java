@@ -5,12 +5,15 @@ import accommodation.CleaningStatus;
 
 public class uweAccommodationTeam {
 
+  public static  ArrayList<AccommodationType> acomTypes;
+
   private static uweAccommodationTeam instance=null;
    
   private ArrayList<Hall> halls;
 
   protected uweAccommodationTeam() {
     halls = new ArrayList<Hall>();
+    acomTypes = new ArrayList<AccommodationType>();
   }
 
   public ArrayList<Hall> getHalls() {
@@ -18,16 +21,20 @@ public class uweAccommodationTeam {
   }
   
   public void addAccommodations(Hall hall) {
+
     AccommodationType accommType = new AccommodationType("Standard", "Standard Desc", 700.0f);
     for (int roomNo = 0; roomNo < 30; roomNo++) {
       Accommodation accommodation = new Accommodation(roomNo + 1, accommType);
       hall.addAccommodation(accommodation);
+      acomTypes.add(accommType);
     }
     AccommodationType superiorEnSuite = new AccommodationType("Superior", "Superior Desc", 750.0f);
     for (int roomNo = 30; roomNo < 40; roomNo++) {
       Accommodation accommodation = new Accommodation(roomNo + 1, superiorEnSuite);
       hall.addAccommodation(accommodation);
+      acomTypes.add(superiorEnSuite);
     }
+
   }
   public void populateData()
   {
